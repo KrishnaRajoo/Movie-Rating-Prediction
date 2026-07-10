@@ -3,6 +3,8 @@
 A Flask-based Machine Learning web application that predicts the IMDb rating of a movie based on its features such as Genre, Director, Actors, Release Year, Duration, and Number of Votes.
 
 ---
+🔗 Live Application: [https://movie-rating-prediction-n3wn.onrender.com]
+---
 
 ## 📌 Project Overview
 
