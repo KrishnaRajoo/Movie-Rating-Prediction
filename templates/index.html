@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Rating Prediction</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/6d8d7b2d91.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav class="navbar">
+
+    <div class="logo">
+        🎬 MovieAI
+    </div>
+
+    <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#predict">Predict</a>
+        <a href="https://github.com/KrishnaRajoo/Movie-Rating-Prediction" target="_blank">
+            GitHub
+        </a>
+    </div>
+
+</nav>
+
+    <div class="background">
+        <div class="circle c1"></div>
+        <div class="circle c2"></div>
+        <div class="circle c3"></div>
+    </div>
+
+    <div class="container">
+
+        <div class="card">
+
+            <div class="heading">
+
+                <h1>
+                    🎬 Movie Rating Prediction
+                </h1>
+
+                <p>
+                    Predict IMDb Movie Rating using Machine Learning
+                </p>
+
+            </div>
+
+            <form action="/predict" method="POST">
+
+                <div class="grid">
+
+                    <div class="input-box">
+                        <label>Genre</label>
+                        <input type="text" name="genre" placeholder="Action" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label>Director</label>
+                        <input type="text" name="director" placeholder="Director Name" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label>Actor 1</label>
+                        <input type="text" name="actor1" placeholder="Lead Actor" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label>Actor 2</label>
+                        <input type="text" name="actor2" placeholder="Supporting Actor" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label>Actor 3</label>
+                        <input type="text" name="actor3" placeholder="Supporting Actor" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label>Release Year</label>
+                        <input type="number" name="year" placeholder="2024" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label>Duration (Minutes)</label>
+                        <input type="number" name="duration" placeholder="145" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label>Votes</label>
+                        <input type="number" name="votes" placeholder="50000" required>
+                    </div>
+
+                </div>
+
+                <button type="submit">
+                    Predict Rating
+                </button>
+
+            </form>
+
+            {% if prediction %}
+
+            <div class="result">
+
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+
+    <h2>⭐ AI Prediction Result</h2>
+
+    <h1>{{ prediction }}/10</h1>
+
+    <div class="rating-badge">
+        Machine Learning Prediction
+    </div>
+
+    <div class="stars">
+        ★★★★★
+    </div>
+
+    <div class="ai-status">
+        <div class="status">✔ Model Loaded</div>
+        <div class="status">✔ Prediction Complete</div>
+        <div class="status">✔ Confidence High</div>
+    </div>
+
+</div>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+
+</html>
